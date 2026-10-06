@@ -1,0 +1,128 @@
+[
+    {
+        "Feature": "Missed_Payments",
+        "Coefficient": 9.309528234150976,
+        "Odds_Ratio": 11042.737313387157,
+        "Abs_Impact": 9.309528234150976
+    },
+    {
+        "Feature": "Credit_Utilization",
+        "Coefficient": 4.098115292507408,
+        "Odds_Ratio": 60.22667090596851,
+        "Abs_Impact": 4.098115292507408
+    },
+    {
+        "Feature": "Credit_Score",
+        "Coefficient": -2.747563641252132,
+        "Odds_Ratio": 0.06408380229767478,
+        "Abs_Impact": 2.747563641252132
+    },
+    {
+        "Feature": "Account_Type_Personal",
+        "Coefficient": -1.950381097839803,
+        "Odds_Ratio": 0.1422198615754871,
+        "Abs_Impact": 1.950381097839803
+    },
+    {
+        "Feature": "Employment_Status_Unemployed",
+        "Coefficient": 1.8049250577892948,
+        "Odds_Ratio": 6.079515819092114,
+        "Abs_Impact": 1.8049250577892948
+    },
+    {
+        "Feature": "Debt_to_Income_Ratio",
+        "Coefficient": 1.2874887366556436,
+        "Odds_Ratio": 3.6236751174364024,
+        "Abs_Impact": 1.2874887366556436
+    },
+    {
+        "Feature": "Location_New York",
+        "Coefficient": -1.1010221791965107,
+        "Odds_Ratio": 0.3325310036421936,
+        "Abs_Impact": 1.1010221791965107
+    },
+    {
+        "Feature": "Income",
+        "Coefficient": -1.0350152089204556,
+        "Odds_Ratio": 0.355220978356264,
+        "Abs_Impact": 1.0350152089204556
+    },
+    {
+        "Feature": "Account_Tenure_Years",
+        "Coefficient": -0.970073073615955,
+        "Odds_Ratio": 0.3790553381471377,
+        "Abs_Impact": 0.970073073615955
+    },
+    {
+        "Feature": "Location_Houston",
+        "Coefficient": -0.9167387933132641,
+        "Odds_Ratio": 0.39982081557017085,
+        "Abs_Impact": 0.9167387933132641
+    },
+    {
+        "Feature": "Location_Los Angeles",
+        "Coefficient": 0.8984341866285038,
+        "Odds_Ratio": 2.4557548453362217,
+        "Abs_Impact": 0.8984341866285038
+    },
+    {
+        "Feature": "Risk_Tier_Very High",
+        "Coefficient": -0.6076993887948648,
+        "Odds_Ratio": 0.5446023472025282,
+        "Abs_Impact": 0.6076993887948648
+    },
+    {
+        "Feature": "Location_Denver",
+        "Coefficient": -0.4933685822216632,
+        "Odds_Ratio": 0.6105661837467312,
+        "Abs_Impact": 0.4933685822216632
+    },
+    {
+        "Feature": "Risk_Tier_Low",
+        "Coefficient": -0.433314537033006,
+        "Odds_Ratio": 0.6483565275909897,
+        "Abs_Impact": 0.433314537033006
+    },
+    {
+        "Feature": "Location_Seattle",
+        "Coefficient": -0.2890060663010708,
+        "Odds_Ratio": 0.7490076616829074,
+        "Abs_Impact": 0.2890060663010708
+    },
+    {
+        "Feature": "Employment_Status_Retired",
+        "Coefficient": -0.2765387683822405,
+        "Odds_Ratio": 0.7584042164571707,
+        "Abs_Impact": 0.2765387683822405
+    },
+    {
+        "Feature": "Location_Chicago",
+        "Coefficient": 0.23634531996888672,
+        "Odds_Ratio": 1.2666116209419978,
+        "Abs_Impact": 0.23634531996888672
+    },
+    {
+        "Feature": "Loan_Balance",
+        "Coefficient": 0.1494713803410726,
+        "Odds_Ratio": 1.1612202366093125,
+        "Abs_Impact": 0.1494713803410726
+    },
+    {
+        "Feature": "Age",
+        "Coefficient": -0.10527010058280202,
+        "Odds_Ratio": 0.9000813772463313,
+        "Abs_Impact": 0.10527010058280202
+    },
+    {
+        "Feature": "Risk_Tier_Moderate",
+        "Coefficient": 0.0976364668582265,
+        "Odds_Ratio": 1.1025618944549125,
+        "Abs_Impact": 0.0976364668582265
+    },
+    {
+        "Feature": "Employment_Status_Self-Employed",
+        "Coefficient": -0.0706026814174487,
+        "Odds_Ratio": 0.9318320527772556,
+        "Abs_Impact": 0.0706026814174487
+    }
+]

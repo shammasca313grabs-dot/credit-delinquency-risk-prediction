@@ -1,0 +1,86 @@
+[
+    {
+        "Feature": "Missed_Payments",
+        "Importance": 0.4338614247032272
+    },
+    {
+        "Feature": "Credit_Utilization",
+        "Importance": 0.14676154804852082
+    },
+    {
+        "Feature": "Debt_to_Income_Ratio",
+        "Importance": 0.09283505254052563
+    },
+    {
+        "Feature": "Risk_Tier_Low",
+        "Importance": 0.061720914017666634
+    },
+    {
+        "Feature": "Credit_Score",
+        "Importance": 0.05484415153533343
+    },
+    {
+        "Feature": "Income",
+        "Importance": 0.05094687272633105
+    },
+    {
+        "Feature": "Employment_Status_Unemployed",
+        "Importance": 0.04162884442150443
+    },
+    {
+        "Feature": "Loan_Balance",
+        "Importance": 0.02783299903119138
+    },
+    {
+        "Feature": "Age",
+        "Importance": 0.024857743576964877
+    },
+    {
+        "Feature": "Account_Tenure_Years",
+        "Importance": 0.023594041824537483
+    },
+    {
+        "Feature": "Risk_Tier_Moderate",
+        "Importance": 0.010096912319610529
+    },
+    {
+        "Feature": "Risk_Tier_Very High",
+        "Importance": 0.008732310297968945
+    },
+    {
+        "Feature": "Account_Type_Personal",
+        "Importance": 0.005045958795140982
+    },
+    {
+        "Feature": "Location_Seattle",
+        "Importance": 0.0031818818018045435
+    },
+    {
+        "Feature": "Location_Denver",
+        "Importance": 0.0023013660845989108
+    },
+    {
+        "Feature": "Employment_Status_Self-Employed",
+        "Importance": 0.0021354106253483694
+    },
+    {
+        "Feature": "Location_Los Angeles",
+        "Importance": 0.00213249861218598
+    },
+    {
+        "Feature": "Employment_Status_Retired",
+        "Importance": 0.0020593024968639712
+    },
+    {
+        "Feature": "Location_Chicago",
+        "Importance": 0.0019405596482018597
+    },
+    {
+        "Feature": "Location_Houston",
+        "Importance": 0.0017902933728715109
+    },
+    {
+        "Feature": "Location_New York",
+        "Importance": 0.001699913519601389
+    }
+]

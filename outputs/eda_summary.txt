@@ -1,0 +1,124 @@
+================================================================================
+GELDIUM FINANCIAL — CREDIT DELINQUENCY RISK ANALYTICS: EDA & CLEANING REPORT
+================================================================================
+
+Raw Dataset Loaded: 1500 customer records.
+Columns: ['Customer_ID', 'Age', 'Income', 'Employment_Status', 'Credit_Score', 'Credit_Utilization', 'Missed_Payments', 'Loan_Balance', 'Debt_to_Income_Ratio', 'Account_Type', 'Location', 'Account_Tenure_Years', 'Delinquent_Account']
+
+--- 1. MISSING VALUE PROFILE (RAW DATA) ---
+                      Missing_Count  Missing_Pct
+Customer_ID                       0         0.00
+Age                               0         0.00
+Income                           82         5.47
+Employment_Status                 0         0.00
+Credit_Score                     48         3.20
+Credit_Utilization                0         0.00
+Missed_Payments                   0         0.00
+Loan_Balance                     87         5.80
+Debt_to_Income_Ratio              0         0.00
+Account_Type                      0         0.00
+Location                          0         0.00
+Account_Tenure_Years              0         0.00
+Delinquent_Account                0         0.00
+
+
+--- 2. ANOMALY DETECTION ---
+Unrealistic Income Records (Income <= $1 or > $500,000): 8
+Sample anomalous income values:
+     Customer_ID    Income Employment_Status
+233   GELD-10233  720000.0          Employed
+652   GELD-10652       1.0          Employed
+725   GELD-10725       1.0        Unemployed
+775   GELD-10775       0.0          Employed
+892   GELD-10892       0.0        Unemployed
+985   GELD-10985  550000.0          Employed
+1045  GELD-11045  950000.0          Employed
+1060  GELD-11060       0.0           Retired
+
+Low Credit Score (< 450) paired with above-median Income (>$ 58,455.77): 10
+Sample low credit score anomalies:
+     Customer_ID  Credit_Score     Income
+188   GELD-10188         395.0   70319.09
+220   GELD-10220         335.0   72713.92
+240   GELD-10240         384.0  108903.16
+370   GELD-10370         341.0   70657.52
+447   GELD-10447         359.0   73403.25
+815   GELD-10815         398.0  105330.37
+863   GELD-10863         317.0   79571.31
+1021  GELD-11021         360.0   63749.10
+1252  GELD-11252         337.0  131629.70
+1413  GELD-11413         406.0   98866.84
+
+
+--- 3. DESCRIPTIVE STATISTICS & SEGMENT DELINQUENCY RATES ---
+Numeric Features Summary Statistics:
+           Age     Income  Credit_Score  Credit_Utilization  Missed_Payments  Loan_Balance  Debt_to_Income_Ratio  Account_Tenure_Years  Delinquent_Account
+count  1500.00    1418.00       1452.00             1500.00          1500.00       1413.00               1500.00               1500.00             1500.00
+mean     46.08   66271.64        671.36               36.86             1.35      14301.28                  0.15                 10.05                0.16
+std      14.59   47873.23         75.38               18.76             1.34       9119.73                  0.13                  5.65                0.37
+min      21.00       0.00        317.00                1.90             0.00       1955.29                  0.05                  0.50                0.00
+25%      34.00   40399.78        625.00               22.94             0.00       8046.83                  0.07                  5.18                0.00
+50%      46.00   58432.79        675.00               35.36             1.00      11759.27                  0.11                 10.05                0.00
+75%      59.00   82628.85        720.00               48.79             2.00      17945.21                  0.18                 14.80                0.00
+max      71.00  950000.00        850.00               93.07             8.00      72503.05                  0.85                 20.00                1.00
+
+
+Overall Base Delinquency Rate: 16.27%
+
+Delinquency Rate by Employment Status:
+                   Count  Delinquency_Rate_%
+Employment_Status                           
+Employed             918               10.35
+Retired              243               15.64
+Self-Employed        213               10.80
+Unemployed           126               69.84
+
+Delinquency Rate by Account Type:
+              Count  Delinquency_Rate_%
+Account_Type                           
+Business        333               21.62
+Personal       1167               14.74
+
+Delinquency Rate by Location:
+             Count  Delinquency_Rate_%
+Location                              
+Atlanta        215               17.67
+Chicago        220               13.64
+Denver         223               16.59
+Houston        197               17.26
+Los Angeles    214               17.29
+New York       206               13.11
+Seattle        225               18.22
+
+
+--- 4. NUMERIC FEATURE CORRELATION WITH DELINQUENT_ACCOUNT ---
+Delinquent_Account      1.0000
+Missed_Payments         0.7062
+Debt_to_Income_Ratio    0.4536
+Credit_Utilization      0.4467
+Loan_Balance            0.0742
+Age                     0.0458
+Account_Tenure_Years   -0.0112
+Credit_Score           -0.1382
+Income                 -0.1676
+
+
+--- 5. DATA CLEANING & IMPUTATION ACTIONS ---
+Action 5a: Flagged 8 anomalous Income records as NaN.
+Action 5b: Median-imputed Income (90 records imputed with $58,455.77).
+Action 5b: Median-imputed Loan_Balance (87 records imputed with $11,759.27).
+Action 5c: Dropped 48 rows (3.20% of raw dataset) due to missing Credit_Score.
+Action 5d: Recomputed Debt_to_Income_Ratio post-imputation based on clean Income & Loan_Balance.
+
+--- 6. FEATURE ENGINEERING: RISK_TIER BUCKETS ---
+Cleaned Dataset Risk_Tier Distribution & Delinquency Rates:
+           Count  Delinquency_Rate_%
+Risk_Tier                           
+Low          565                1.59
+Moderate     544               15.62
+High         295               37.97
+Very High     48               68.75
+
+
+Final Cleaned Dataset Size: 1452 records (96.80% retained).
+Saved cleaned dataset to: data/geldium_customers_clean.csv
